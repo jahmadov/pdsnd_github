@@ -62,6 +62,8 @@ def load_data(city, month, day):
     df['Month']=df['Start Time'].dt.month
     months=['january','february','march','april','may','june']
     df['Weekday']=df['Start Time'].dt.day_name()
+
+    # add conditions to filter month and weekday basing on user input
     if month!='all' and day!='all':
         df=df[df['Month']==months.index(month)+1]
         df=df[df['Weekday']==day.title()]
